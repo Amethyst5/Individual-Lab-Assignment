@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Lab_3.SiteMaster" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Purple Daez</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- style for header     -->
+    <style type="text/css">
+        .newStyle1 {
+            font-family: Stencil;
+        }
+
+        .auto-style1 {
+            color: #660066;
+        }
+        .auto-style2 {
+            float: right;
+            width: 352px;
+        }
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- stylesheets -->
+        <link href="StyleSheet1.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <body  style="background-image: url('imgfile/nature-3044755.jpg'); background-repeat: no-repeat; background-position: center;
+  background-size: cover; height:3200px; margin-left: 0px; margin-right: 0px;">
+
+        <!-- navbar at the very top -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <center> <p style="color: white; font: Arial; font-size: 12px;">REGISTER TODAY TO GET 10% OFF YOUR FIRST ORDER ---- FREE SHIPPING ON ORDERS OVER $75 ---- CHECK OUT OUR NEW ARRIVALS!!!</p> </center>
+        </div>
+
+        <!-- main heading -->
+
+        <center><h1 style="font-size: 72px;" class="auto-style1"><span class="newStyle1">PURPLE DAEZ</span></h1></center>
+
+        <!-- sign/register/cart -->
+        <ul>
+            <p class="auto-style2">
+                <strong><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></strong><span class="auto-style1">&nbsp;|&nbsp;</span>  <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Sign out</asp:LinkButton>&nbsp;<asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Login</asp:LinkButton><span class="auto-style1">&nbsp; | </span><a runat="server" href="Cart.aspx"><i class="fa fa-shopping-cart" style="font-size: 24px"></i></a>
+                Items in cart:<asp:Label ID="Label1" runat="server" Font-Bold="True"></asp:Label>
+        </ul>
+
+            
+           
+        <!-- menu -->
+        <ul>
+            <li><a runat="server" href="Home.aspx" class="auto-style1"><strong>Home</strong></a></li>
+            <li><a runat="server" href="Bags.aspx" class="auto-style1"><strong>Bags</strong></a></li>
+            <li><a runat="server" href="Beauty.aspx" class="auto-style1"><strong>Beauty</strong></a></li>
+            <li><a runat="server" href="Jewellery.aspx" class="auto-style1"><strong>Jewellery</strong></a></li>
+            <li><a runat="server" href="Kids.aspx" class="auto-style1"><strong>Kids</strong></a></li>
+            <li><a runat="server" href="Men.aspx" class="auto-style1"><strong>Men</strong></a></li>
+            <li><a runat="server" href="Women.aspx" class="auto-style1"><strong>Women</strong></a></li>
+            <li><a runat="server" href="ContactUs.aspx" class="auto-style1"><strong>Contact Us</strong></a></li>
+            <li><a runat="server" href="AboutUs.aspx" class="auto-style1"><strong>About Us</strong></a></li>
+            <li><a runat="server" href="OrderHistory.aspx" class="auto-style1"><strong>A/C</strong></a></li>
+            <asp:HyperLink ID="HyperLink1" runat="server" href="Admin.aspx">Admin</asp:HyperLink> <!--<li><a runat="server" href="Admin.aspx" class="auto-style1"><strong>Manage</strong></a></li>-->
+            <li style="float: right">
+                <input type="text" placeholder="Search.."></li>
+        </ul>
+           
+            
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <center><footer>
+                <p>&copy; <%: DateTime.Now.Year %> Purple Daez</p>
+                <div>
+
+
+                    <p style="color: purple; font-size: 15px;">
+                        <a href="PrivacyPolicy.aspx">Privacy Policy</a> &nbsp; &nbsp;<a href="AboutUs.aspx">About Us</a> &nbsp; &nbsp;<a href="ContactUs.aspx">Contact US</a> &nbsp; &nbsp;<a href="NewsLetter.aspx">News Letter</a>&nbsp; &nbsp;<a href="Locations.aspx">Locations</a> &nbsp;
+                    </p>
+
+                </div>
+
+                <!-- Add font awesome icons -->
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+
+            </footer></center>
+        </div>
+
+    </form>
+</body>
+</html>
